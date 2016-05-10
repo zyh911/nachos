@@ -1,0 +1,27 @@
+#include <sys/time.h> 
+#include <stdio.h> 
+#include <math.h>
+
+int gettimeofday(struct timeval *tv,struct timezone *tz); 
+
+//struct timeval {
+//	long tv_sec; /* 秒数 */
+//	long tv_usec; /* 微秒数 */ 
+//};
+void function() 
+{
+	unsigned int i,j; 
+	double y; 
+}
+int main(int argc, char *argv[]) {
+	struct timeval tpstart,tpend; 
+	float timeuse; 
+	gettimeofday(&tpstart,NULL);
+	system("./2"); //若是嵌入式汇编直接换成你的代码,否则在此处换对你汇编后可执行 
+		    //文件的调用。
+	gettimeofday(&tpend,NULL);
+	timeuse=1000000*(tpend.tv_sec-tpstart.tv_sec)+ tpend.tv_usec-tpstart.tv_usec; 
+	timeuse/=1000000;
+	printf("Used Time:%f\n",timeuse);
+	return 0;
+}
